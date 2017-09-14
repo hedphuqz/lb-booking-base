@@ -1,0 +1,30 @@
+{
+  "name": "event",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "time": {
+      "type": "date"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "performers": {
+      "type": "hasMany",
+      "model": "performer",
+      "foreignKey": "eventId",
+      "through": "performance"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

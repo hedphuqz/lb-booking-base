@@ -1,0 +1,32 @@
+{
+  "name": "performance",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "total_fee": {
+      "type": "string",
+      "default": "0"
+    },
+    "role": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "event": {
+      "type": "belongsTo",
+      "model": "event",
+      "foreignKey": "eventId"
+    },
+    "performer": {
+      "type": "belongsTo",
+      "model": "performer",
+      "foreignKey": "performerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

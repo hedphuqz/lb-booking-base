@@ -1,0 +1,39 @@
+{
+  "name": "performer",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first-name": {
+      "type": "string"
+    },
+    "last-name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "event",
+      "foreignKey": "performerId",
+      "through": "performance"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
